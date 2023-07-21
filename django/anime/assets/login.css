@@ -1,0 +1,36 @@
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-actions {
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: rgb(44, 44, 123);
+    border-color: rgb(44, 44, 123);
+}
+
+.btn-primary:hover {
+    background-color: #333;
+    border-color: #333;
+}
+
+.btn-outline-primary {
+    color: rgb(44, 44, 123);
+    border-color: rgb(44, 44, 123);
+}
+
+.btn-outline-primary:hover {
+    color: #333;
+    border-color: #333;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup-link a {
+    text-decoration: none;
+}

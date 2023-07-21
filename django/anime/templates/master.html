@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+  {% load static %}
+
+  <link rel="stylesheet" href="{% static 'master.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <ul class="nav " style="background-color: rgb(44, 44, 123);">
+        {% if user.is_authenticated%}
+        <li class="nav-item">
+            <a class="nav-link link-light" href="/">HOME</a>
+        </li>
+        <li class="nav-item">
+            <form action="{% url 'accounts:logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-outline-primary" style="color:white;border: none;">Logout</button>
+            </form>
+        </li>
+        {% else %}
+        <li class="nav-item">
+        <a class="nav-link link-light" href="/">HOME</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link link-light" href="{% url 'accounts:login' %}">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link link-light" href="{% url 'accounts:signup' %}">Signup</a>
+        </li>
+        
+        {% endif%}
+    </ul>
+    <div class="container col-md-8 offset-md-2">
+    <h1 style="text-align: center;color:  rgb(44, 44, 123); margin-top: 10px;">MyAnimeList</h1>
+    </div>
+    <div class="wrapper">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+.anime-description {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.anime-cards .card {
+    height: 22rem;
+}
+
+.anime-cards .card-img-top {
+    object-fit: cover;
+    height: 12rem;
+}
+
+.anime-cards .card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.anime-cards .card-text {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.anime-cards .btn-primary {
+    background-color: rgb(44, 44, 123);
+    border-color: rgb(44, 44, 123);
+}
+
+.anime-cards .btn-primary:hover {
+    background-color: #333;
+    border-color: #333;
+}
+
+/* Additional styles for responsiveness */
+@media (max-width: 767px) {
+    .anime-cards .col-md-4.offset-md-4 {
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,19 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+<!-- <link rel="stylesheet" href="{% static 'login.css' %}"> -->
+    <form action="/accounts/login/" class="form-group" method="post">
+        {% csrf_token %}
+        {{form}}
+        {% if request.GET.next %}
+            <input type="hidden" name="next" value="{{request.GET.next}}">
+        {% endif %}
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+    </form>
+    <div class="signup-link">
+        Don't have an account?
+        <a href="{% url 'accounts:signup' %}" class="btn btn-primary">Signup</a>
+    </div>
+{% endblock %}

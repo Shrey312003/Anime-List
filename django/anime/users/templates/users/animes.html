@@ -1,0 +1,25 @@
+{% extends 'master.html' %}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'styles.css' %}">
+
+    <div class="container anime_details">
+    <div class="anime-info">
+        <h2 class="title">{{anime.title}}</h2>
+        <p><img src="{{anime.thumbnail.url}}" class="detail_image"></p>
+        <p class="body">{{anime.body}}</p>
+    </div>
+    <div class="button-container">
+        <a href="{% url 'users:anime-list' %}">
+            <button class="back-button">Back To list</button>
+        </a>
+    </div>
+    <div class="delete-form">
+        <form action="{%url 'users:delete-data' anime.pk%}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="delete-button">Delete</button>
+        </form>
+    </div>
+    </div>
+{% endblock%}
